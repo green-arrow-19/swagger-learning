@@ -1,5 +1,6 @@
 package io.greenarrow19.swagger;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,8 +22,13 @@ public class AppController {
     }
     
     @PostMapping("/add/{appName}")
-    public String add(@PathVariable String appName){
+    public String addApp(@PathVariable String appName){
         return appName+" app added successfully";
+    }
+    
+    @DeleteMapping("/delete/{appName}")
+    public String deleteApp(@PathVariable String appName) {
+        return appName + " app deleted successfully";
     }
 }
 
